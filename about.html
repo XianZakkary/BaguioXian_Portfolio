@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Xian's Design Proposal - About Me</title>
+<style>
+    body {
+        background: #100d22;
+        color: #4040a5;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    @font-face {
+        font-family: "Cyberpunk"; 
+        src: url("Cyberpunk.ttf") format("truetype");
+    }
+
+    header {
+        font-family: "Cyberpunk", Arial, sans-serif;
+        background-image: url("banner.gif");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 150px;
+        color: #ffef0a;
+        font-size: 28px;
+        text-shadow: -2px 2px 0px #09f4fc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background: #372964;
+        overflow: hidden;
+    }
+
+    nav ul li {
+        float: left;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 14px 20px;
+        color: #19ac8a;
+        text-decoration: none;
+    }
+
+    nav ul li a:hover {
+        background: #483970;
+    }
+
+    section {
+        padding: 30px 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .about-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 25px;
+        margin-bottom: 40px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s ease-out;
+    }
+
+    img.profile {
+        width: 220px;
+        border-radius: 12px;
+        border: 2px solid #19ac8a;
+    }
+
+    .about-text {
+        flex: 1;
+        min-width: 250px;
+        background: #151026;
+        color: #d0d0d0;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #372964;
+        line-height: 1.6;
+    }
+
+    .info-box {
+        background: #151026;
+        border: 1px solid #372964;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 25px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s ease-out;
+    }
+
+    .info-box h3 {
+        color: #19ac8a;
+        margin-top: 0;
+    }
+
+    .info-box ul li {
+        color: #a8a9d6;
+        margin-bottom: 6px;
+    }
+
+    .show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 700px) {
+        .about-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        img.profile {
+            margin-bottom: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>About Me</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<section>
+    <h2 style="color: #19ac8a;">Who Am I?</h2>
+
+    <div class="about-container reveal">
+        <img src="me.jpg" class="profile" alt="Profile Picture">
+        <div class="about-text">
+            <p>
+                My name is <b style="color:#19ac8a;">Xian Zakkary A. Baguio</b>.  
+                I was born on <b>September 25, 2006</b> in Cebu, Philippines and I aspire to be a VR/AR software developer.  
+                It is my passion to bring the digital world to reality and I will achieve that goal through my will to learn.
+            </p>
+        </div>
+    </div>
+
+    <div class="info-box reveal">
+        <h3>Skills</h3>
+        <ul>
+            <li>HTML and CSS</li>
+            <li>UI Layout Design</li>
+            <li>Basic C Knowledge</li>
+            <li>Beginner Blender Experience</li>
+        </ul>
+    </div>
+
+    <div class="info-box reveal">
+        <h3>Educational Background</h3>
+        <ul>
+            <li>Three H Redwood Academy, 2009-2011</li>
+            <li>University of San Carlos Montessori Academy, 2011-2023</li>
+            <li>University of San Carlos, North Campus, 2023-2025</li>
+            <li>University of San Carlos, Talamban Campus, 2025-present</li>
+        </ul>
+    </div>
+
+    <div class="info-box reveal">
+        <h3>Hobbies</h3>
+        <ul>
+            <li>Cycling</li>
+            <li>Swimming</li>
+            <li>Chess</li>
+            <li>Badminton</li>
+        </ul>
+    </div>
+
+</section>
+
+<script>
+
+    function reveal() {
+        const elements = document.querySelectorAll('.reveal');
+        for (let i = 0; i < elements.length; i++) {
+            const windowHeight = window.innerHeight;
+            const elementTop = elements[i].getBoundingClientRect().top;
+            const revealPoint = 150;
+
+            if (elementTop < windowHeight - revealPoint) {
+                elements[i].classList.add('show');
+            }
+        }
+    }
+
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+</script>
+
+</body>
+</html>
