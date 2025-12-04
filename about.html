@@ -14,12 +14,12 @@
 
     @font-face {
         font-family: "Cyberpunk"; 
-        src: url("Cyberpunk.ttf") format("truetype");
+        src: url("assets/fonts/Cyberpunk.ttf") format("truetype");
     }
 
     header {
         font-family: "Cyberpunk", Arial, sans-serif;
-        background-image: url("banner.gif");
+        background-image: url("assets/images/banner.gif");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -147,7 +147,7 @@
     <h2 style="color: #19ac8a;">Who Am I?</h2>
 
     <div class="about-container reveal">
-        <img src="me.jpg" class="profile" alt="Profile Picture">
+        <img src="assets/images/me.jpg" class="profile" alt="Profile Picture">
         <div class="about-text">
             <p>
                 My name is <b style="color:#19ac8a;">Xian Zakkary A. Baguio</b>.  
@@ -190,14 +190,12 @@
 </section>
 
 <script>
-
     function reveal() {
         const elements = document.querySelectorAll('.reveal');
         for (let i = 0; i < elements.length; i++) {
             const windowHeight = window.innerHeight;
             const elementTop = elements[i].getBoundingClientRect().top;
             const revealPoint = 150;
-
             if (elementTop < windowHeight - revealPoint) {
                 elements[i].classList.add('show');
             }
